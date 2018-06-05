@@ -16,7 +16,6 @@ export default function (state = {}, action = {}) {
                 }
             }
 
-            
             return {
                 // Append this to the state we had before:
                 ...state,
