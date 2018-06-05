@@ -7,7 +7,7 @@ export default function (starship = {}, action = {}) {
 
             let _starships = {}
 
-            for (let starship of action.payload.starships) {
+            for (let starship of action.payload.results) {
                 _starships = {
                     ..._starships,
                     [starship.name]: starship
@@ -19,6 +19,8 @@ export default function (starship = {}, action = {}) {
                 ...starship,
                 ..._starships
             }
+           
+           // return action.payload
 
         default:
             return starship

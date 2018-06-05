@@ -5,7 +5,7 @@ const baseUrl = 'https://swapi.co/api'
 
 export const FETCH_ALL_STARSHIPS = "FETCH_ALL_STARSHIPS"
 
-export const fetchAllPeople = () => (dispatch) => {
+export const fetchAllShips = () => (dispatch) => {
     request
         .get(`${baseUrl}/starships/`)
         .then(response => dispatch({

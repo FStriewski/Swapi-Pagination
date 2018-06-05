@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { fetchAllPeople, fetchMorePeople } from '../../actions/people'
 import { fetchAllSpecies } from '../../actions/species'
 import { fetchAllPlanets } from '../../actions/planets'
+import { fetchAllShips } from '../../actions/starships'
 import { Link } from 'react-router-dom'
 import '../../styles/css/tableUnit.css'
 
@@ -20,6 +21,7 @@ export class TableBody extends React.Component {
         this.props.fetchAllPeople()
         this.props.fetchAllSpecies()
         this.props.fetchAllPlanets()
+        this.props.fetchAllShips()
     }
 
     loadMore = (url) => {
@@ -93,4 +95,4 @@ const mapStateToProps = (state, props) => ({
 
 })
 
-export default connect(mapStateToProps, { fetchAllPeople, fetchMorePeople, fetchAllSpecies, fetchAllPlanets })(TableBody)
+export default connect(mapStateToProps, { fetchAllPeople, fetchMorePeople, fetchAllSpecies, fetchAllPlanets, fetchAllShips })(TableBody)
