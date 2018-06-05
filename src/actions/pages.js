@@ -16,3 +16,4 @@ const receivePage = (page, results) => ({
         results
     }
 })
+

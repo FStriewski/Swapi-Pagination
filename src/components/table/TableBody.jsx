@@ -11,6 +11,11 @@ import '../../styles/css/tableUnit.css'
 // Named export needed for testing:
 export class TableBody extends React.Component {
     static propTypes = {
+        filter: PropTypes.shape({
+            term: PropTypes.string,
+            gender: PropTypes.string,
+            race: PropTypes.string,
+        }),
         fetchAllPeople: PropTypes.func,
         fetchAllSpecies: PropTypes.func,
         fetchAllPlanets: PropTypes.func,

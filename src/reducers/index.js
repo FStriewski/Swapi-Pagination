@@ -10,5 +10,5 @@ export default {
     filter, 
     species, 
     planets,
-    //pages, 
+   // pages, 
     } 

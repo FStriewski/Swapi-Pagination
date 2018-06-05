@@ -2,48 +2,50 @@
 
 import { combineReducers } from 'redux'
 
+const baseUrl = 'https://swapi.co/api/starships/'
 
-const createPaginationReducer = (endpoint) => {
+
+export default function (baseUrl) {
 
     const pages = (pages = {}, action = {}) => {
 
-    switch (action.type) {
-        case 'REQUEST_PAGE':
-            return {
-                ...pages,
-                [action.payload.page]: {
-                    ids: [],
-                    fetching: true
+        switch (action.type) {
+            case 'REQUEST_PAGE':
+                return {
+                    ...pages,
+                    [action.payload.page]: {
+                        ids: [],
+                        fetching: true
+                    }
+                }
+            case 'RECEIVE_PAGE': {
+                return {
+                    ...pages,
+                    [action.payload.page]: {
+                        ids: action.payload.results.filter(item => item.id),
+                        fetching: false
+                    }
                 }
             }
-        case 'RECEIVE_PAGE': {
-            return {
-                ...pages,
-                [action.payload.page]: {
-                    ids: action.payload.results.filter(item => item.id),
-                    fetching: false
-                }
-            }
+            default:
+                return pages
         }
-        default:
-            return pages
     }
+
+    const currentPage = (currentPage = 1, action = {}) =>
+        action.type == 'REQUEST_PAGE' ? action.payload.page : currentPage
+
+    const onlyForEndpoint = (reducer) => (state = {}, action = {}) =>
+        typeof action.meta == 'undefined' ? state : action.meta.endpoint == baseUrl ? reducer(state, action) : state
+
+    const paginations = onlyForEndpoint(
+        combineReducers({
+            pages,
+            currentPage
+        })
+    )
+
 }
 
-const currentPage = (currentPage = 1, action = {}) =>
-    action.type == 'REQUEST_PAGE' ? action.payload.page : currentPage
-
-const onlyForEndpoint = (reducer) => (state = {}, action = {}) =>
-    typeof action.meta == 'undefined' ? state : action.meta.endpoint == endpoint ? reducer(state, action) : state
-
-const paginations = onlyForEndpoint(
-    combineReducers({
-        pages,
-        currentPage
-    })
-)
-
-}
-
-const shipPagination = createPaginationReducer('/starships/')
+//const shipPagination = createPaginationReducer('/starships/')
 //const usersPagination = createPaginationReducer('/users/')
