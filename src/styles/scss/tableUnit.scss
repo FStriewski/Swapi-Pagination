@@ -1,0 +1,74 @@
+@import "#variables";
+@import "#mixins";
+
+// Nesting table styles (flat structure)
+.tableContainer {
+    font-size: 0.8em;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    background-color: $swcoal;
+    table {
+        overflow: auto;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    thead {
+        overflow: auto;
+    }
+    tbody {
+        height: 400px;
+        overflow: auto;
+        color: $swyellow;
+    
+    td {
+        border: solid 1px $swgold; // color: $swyellow;
+        padding: 1em;
+    }
+    }
+
+    button {
+        border: 1px solid $swyellow;
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        color: $swyellow;
+        padding: .5rem 1rem;
+        font-size: .7rem;
+    }
+
+    @include links
+}
+
+#tableHeader {
+    font-size: 0.8em;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    background-color: $swwhite;
+    color: $swblack;
+    
+}
+
+.filterBarContainer {
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    background-color: $swblue;
+    color: $swwhite;
+    padding: 1%;
+    cursor: pointer;
+    text-align: center
+}
+
+#wrapper {
+    display: none;
+}
+
+#filters {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding: 1%;
+    background-color: $swblue;
+    border: solid 1px $swgrey;
+}
+
+#filterButton {
+    padding: 0.5%;
+}

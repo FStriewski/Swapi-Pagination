@@ -1,0 +1,72 @@
+.topBarContainer {
+    min-height: 1.2em;
+    padding: 1%;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    background-color: #333333;
+    border: 1px solid black;
+    color: #ffe300;
+    text-align: right;
+    font-size: .7rem;
+}
+
+.textFilter span {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+    padding: .2rem 1rem;
+    color: white;
+}
+
+.textFilter input {
+    -webkit-appearance: none;
+    color: white;
+    padding: .2rem 1rem;
+    font-size: .7rem;
+    border: 1px solid white;
+    background-color: #333333;
+    margin-right: 2rem;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+.genderFilter {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+     margin-right: 2rem;
+}
+
+.genderFilter span {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+    padding: .2rem 1rem;
+    color: white;
+}
+
+.genderFilter select {
+    background-color: #333333;
+    color: white;
+    padding: .2rem 1rem;
+    font-size: .7rem;
+}
+
+.speciesFilter {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+}
+
+.speciesFilter span {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+    padding: .2rem 1rem;
+    color: white;
+}
+
+.speciesFilter select {
+    background-color: #333333;
+    color: white;
+    padding: .2rem 1rem;
+    font-size: .7rem;
+}

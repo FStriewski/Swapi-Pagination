@@ -1,0 +1,71 @@
+.tableContainer {
+  font-size: 0.8em;
+  font-family: helvetica neue, Helvetica, Arial, sans-serif;
+  background-color: #333333; }
+  .tableContainer table {
+    overflow: auto;
+    width: 100%;
+    border-collapse: collapse; }
+  .tableContainer thead {
+    overflow: auto; }
+  .tableContainer tbody {
+    height: 400px;
+    overflow: auto;
+    color: #ffe300; }
+    .tableContainer tbody td {
+      border: solid 1px #ffe10083;
+      padding: 1em; }
+  .tableContainer button {
+    border: 1px solid #ffe300;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    color: #ffe300;
+    padding: .5rem 1rem;
+    font-size: .7rem; }
+  .tableContainer a:link {
+    color: #ffe300;
+    text-decoration: none; }
+  .tableContainer a:visited {
+    color: #ffe300;
+    text-decoration: none; }
+  .tableContainer a:hover {
+    color: #ffe10083; }
+  .tableContainer a:active {
+    color: #ffe10083; }
+
+#tableHeader {
+  font-size: 0.8em;
+  font-family: helvetica neue, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000; }
+
+.filterBarContainer {
+  font-family: helvetica neue, Helvetica, Arial, sans-serif;
+  background-color: #32383e;
+  color: #ffffff;
+  padding: 1%;
+  cursor: pointer;
+  text-align: center; }
+
+#wrapper {
+  display: none; }
+
+#filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1%;
+  background-color: #32383e;
+  border: solid 1px #c3c3c3; }
+
+#filterButton {
+  padding: 0.5%; }

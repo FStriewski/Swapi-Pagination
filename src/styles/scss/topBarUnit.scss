@@ -1,0 +1,75 @@
+@import "#variables";
+    
+
+.topBarContainer {
+    min-height: 1.2em;
+    padding: 1%;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    background-color: $swcoal;
+    border: 1px solid $swblack;
+    color: $swyellow;
+    text-align: right;
+    font-size: .7rem;
+}
+
+.textFilter span {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+    padding: .2rem 1rem;
+    color: $swwhite;
+}
+
+.textFilter input {
+    -webkit-appearance: none;
+    color: $swwhite;
+    padding: .2rem 1rem;
+    font-size: .7rem;
+    border: 1px solid $swwhite;
+    background-color: $swcoal;
+    margin-right: 2rem;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+.genderFilter {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    margin-right: 2rem;
+}
+
+.genderFilter span {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+    padding: .2rem 1rem;
+    color: $swwhite;
+}
+
+.genderFilter select {
+    background-color: $swcoal;
+    color: $swwhite;
+    padding: .2rem 1rem;
+    font-size: .7rem;
+}
+
+.speciesFilter {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+}
+
+.speciesFilter span {
+    position: relative;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-size: .7rem;
+    padding: .2rem 1rem;
+    color: $swwhite;
+}
+
+.speciesFilter select {
+    background-color: $swcoal;
+    color: $swwhite;
+    padding: .2rem 1rem;
+    font-size: .7rem;
+}

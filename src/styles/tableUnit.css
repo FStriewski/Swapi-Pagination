@@ -1,0 +1,94 @@
+.tableHeader {
+    min-height: 2.4em;
+    font-size: 0.8em;
+    padding: 1%;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    background-color: white;
+    color: #3f454c;
+    border: solid 1px #3f454c;
+    border-spacing: 0;
+}
+
+.tableContainer {
+    font-size: 0.8em;
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    color: #ffe300;
+    border-collapse: collapse;
+    background-color: #333333;
+}
+
+.tableContainer table {
+    overflow: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableContainer thead {
+    overflow: auto;
+}
+
+.tableContainer tbody {
+    height: 400px;
+    overflow: auto;
+}
+
+.tableContainer tbody td {
+    border: solid 1px #ffe10083;
+    color: #ffe300;
+    padding: 1em;
+}
+
+.filterBarContainer {
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    background-color: #32383e;
+    color: white;
+    padding: 1%;
+    cursor: pointer;
+    text-align: center
+}
+
+#wrapper {
+    display: none;
+}
+
+#filters {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding: 1%;
+    background-color: #32383e;
+    border: solid 1px #c3c3c3;
+}
+
+#filterButton {
+    padding: 0.5%;
+}
+
+.tableContainer a:link {
+    color: #ffe300;
+    text-decoration: none;
+}
+
+.tableContainer a:visited {
+    color: #ffe300;
+    text-decoration: none;
+}
+
+.tableContainer a:hover {
+    color: #ffe10083;
+}
+
+.tableContainer a:active {
+    color: #ffe10083;
+}
+
+.tableContainer button {
+    border: 1px solid #ffe300;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    color: #ffe300;
+    padding: .5rem 1rem;
+    font-size: .7rem;
+}
