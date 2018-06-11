@@ -8,6 +8,10 @@ export const FETCH_MORE_PEOPLE = "FETCH_MORE_PEOPLE"
 
 export const FETCH_CHARACTER = "FETCH_CHARACTER"
 
+const birthYearDecoder = (year) => {
+    return "1"
+}
+
 
 export const fetchAllPeople = () => (dispatch) => {
     request
@@ -20,7 +24,7 @@ export const fetchAllPeople = () => (dispatch) => {
                     x => (
                         {
                             ...x,
-                            birth_year: ""
+                            birth_year: birthYearDecoder( x.birth_year)
                         }
                     )
                 )
