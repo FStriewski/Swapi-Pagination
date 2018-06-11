@@ -9,9 +9,18 @@ export const FETCH_MORE_PEOPLE = "FETCH_MORE_PEOPLE"
 export const FETCH_CHARACTER = "FETCH_CHARACTER"
 
 const birthYearDecoder = (year) => {
-    return "1"
+    if (year.search("BBY") > 0) {
+        year = year.slice(0, year.search("BBY"))
+        year = (0 - Number(year))
+    }
+    else if (year.search("ABY") > 0) {
+        year = year.slice(0, year.search("ABY"))
+    }
+    else {
+        year = null
+    }
+    return year 
 }
-
 
 export const fetchAllPeople = () => (dispatch) => {
     request
@@ -20,25 +29,23 @@ export const fetchAllPeople = () => (dispatch) => {
 
             const people = {
                 ...response.body,
-                results: response.body.results.map( 
+                results: response.body.results.map(
                     x => (
                         {
                             ...x,
-                            birth_year: birthYearDecoder( x.birth_year)
+                            birth_year: birthYearDecoder(x.birth_year)
                         }
                     )
                 )
             }
-            
-            
             dispatch({
                 type: FETCH_ALL_PEOPLE,
                 payload: people
+            })
         })
-    
-         })
         .catch(error => console.error(error))
 }
+
 export const fetchCharacter = (url) => (dispatch) => {
     console.log(url)
     request

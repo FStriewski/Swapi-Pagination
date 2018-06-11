@@ -32,30 +32,6 @@ export class FilterBar extends React.Component {
         this.props.filterBySpecies(e.target.value)
     }
 
-    decodeBirthyear = (people) => {
-    if (!people) return ""
-
-        const year = people.results.map(c => {
-            
-            if (c.birth_year.search("BBY") > 0) {
-
-                c.birth_year = c.birth_year.slice(0, c.birth_year.search("BBY"))
-                c.birth_year = (0 - Number(c.birth_year))
-            }
-            else if (c.birth_year.search("ABY") > 0) {
-                c.birth_year = c.birth_year.slice(0, c.birth_year.search("ABY"))
-            }
-            else {
-                c.birth_year = null
-            }
-            return c.birth_year
-        }
-        )
-
-        console.log(year.length )
-        return year
-    }
-
     render() {
         const { species } = this.props
         if (!species) return ""
@@ -66,9 +42,7 @@ export class FilterBar extends React.Component {
         for (let s in species) {
             speciesNames.push(species[s])
         }
-        // Replace by this.props.people when API is online
-        const birthyears = this.decodeBirthyear(offline_people)
-
+   
         return (
             <div >
                 <div className="filterBarContainer" onClick={this.toggleVisibility}> <span id="filterButton">&#x21D5; Filter &#x21D5; </span></div>
@@ -96,7 +70,7 @@ export class FilterBar extends React.Component {
                             </select>
                         </div>
 
-                        <Slider people={birthyears} />
+                        <Slider people={this.props.people} />
 
                     </div>
                 </div>
