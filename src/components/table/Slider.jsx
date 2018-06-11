@@ -20,9 +20,9 @@ export default class Slider extends React.Component {
         return (
             <div className="sliderContainer">
                 <div>
-                    <label htmlFor="score">Score ({this.state.sliderValue} - 10) </label>
+                    <label htmlFor="score">Birth Year ({this.state.sliderValue} - 10) </label>
                 </div>
-                <input id="score" className="Slider" type="range" value={this.state.sliderValue} min="0" max="10" onChange={this.onSliderChange} />
+                <input id="score" className="Slider" type="range" value={this.state.sliderValue} min="-10" max="10" onChange={this.onSliderChange} />
             </div>
         )
     }

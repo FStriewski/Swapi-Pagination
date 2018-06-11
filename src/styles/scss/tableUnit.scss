@@ -68,8 +68,21 @@
     padding: 0.5%;
 }
 
+.sliderContainer {
+    font-family: helvetica neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    color: $swwhite;
+    padding: .5rem 1rem;
+    font-size: .7rem;
+}
+
 .Slider {
     margin-top: 10; 
     margin-left: -50;
     width: 100%;
 }
+
+@include slider
