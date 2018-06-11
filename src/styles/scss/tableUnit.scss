@@ -47,7 +47,8 @@
     color: $swwhite;
     padding: 1%;
     cursor: pointer;
-    text-align: center
+    text-align: center;
+    
 }
 
 #wrapper {
@@ -69,14 +70,14 @@
 }
 
 .sliderContainer {
-    font-family: helvetica neue,
-        Helvetica,
-        Arial,
-        sans-serif;
-
+    font-family: helvetica neue, Helvetica, Arial, sans-serif;
     color: $swwhite;
     padding: .5rem 1rem;
     font-size: .7rem;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
 }
 
 .Slider {

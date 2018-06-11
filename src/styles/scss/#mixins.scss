@@ -63,7 +63,7 @@
       //  0px 0px 1px $swwhite;
         background: $swcoal;
         border-radius: 1.3px;
-        border: 1px solid $swwhite;
+         border: solid 1px $swgrey;
     }
     input[type=range]:focus::-webkit-slider-runnable-track {
            background: $swcoal;
@@ -76,7 +76,7 @@
        // 0px 0px 1px $swwhite;
         background: $swcoal;
       //  border-radius: 1.3px;
-        border: 1px solid $swwhite;
+       border: solid 1px $swgrey;
     }
     input[type=range]::-ms-track {
         width: 100%;
@@ -89,7 +89,7 @@
     }
     input[type=range]::-ms-fill-lower {
         background: $swcoal;
-        border: 1px solid $swwhite;
+         border: solid 1px $swgrey;
      //   border-radius: 2.6px;
       //  box-shadow: 1px 1px 1px $swwhite,
        // 0px 0px 1px $swwhite;
@@ -99,7 +99,7 @@
     }
     input[type=range]::-ms-fill-upper {
         background: $swcoal;
-        border: 1px solid $swwhite;
+         border: solid 1px $swgrey;
       //  border-radius: 2.6px;
        // box-shadow: 1px 1px 1px $swwhite,
         //0px 0px 1px $swwhite;
