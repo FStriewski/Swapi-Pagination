@@ -1,46 +1,21 @@
 import React from 'react'
-import { connect } from 'react-redux'
-// import { filterByScore } from '../../actions/filter'
-// import { fetchAllCompanys } from '../../actions/company'
 
 
-class Slider extends React.Component {
+export default class Slider extends React.Component {
 
     state = {
         sliderValue: 0,
     }
 
-    decodeBirthyear = (people) => {
-console.log(
-   // people.results.map (c => c.birth_year.search("BBY")) ,
-
-    people.results.map(c => {
-        if (c.birth_year.search("BBY") > 0) {
-
-            c.birth_year = c.birth_year.slice(0, 2 )
-        }
-        c.birth_year
-        //.split("")
-        //.replace(/^\D+/g, '') 
-        //.join("")
-    })
-)
-    }
-
     onSliderChange = (e) => {
 
-        this.setState({ 
-            sliderValue: e.target.value 
+        this.setState({
+            sliderValue: e.target.value
         });
-
-        // const initialValue = this.props.companys.past[1]
-        // const selection = initialValue.filter(company => company.score >= e.target.value )
-
-        // return this.props.filterByScore(selection)
     }
 
+
     render() {
-        const birthyear = this.decodeBirthyear(this.props.people)
 
         return (
             <div className="sliderContainer">
@@ -53,9 +28,6 @@ console.log(
     }
 }
 
-const mapStateToProps = (state) => ({
-})
 
-export default  connect(mapStateToProps, {  })(Slider)
 
 

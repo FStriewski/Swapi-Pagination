@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Slider from './Slider'
 import { filterByName, filterByGender, filterBySpecies } from '../../actions/filter'
 import '../../styles/css/topBarUnit.css'
-import {offline_people} from '../../offlineAPI'
+import { offline_people } from '../../offlineAPI'
 
 
 // Named export needed for testing
@@ -20,7 +20,7 @@ export class FilterBar extends React.Component {
         (el.style.display !== 'block') ? el.style.display = 'block' : el.style.display = 'none';
     }
 
-    handleName= (e) => {
+    handleName = (e) => {
         this.props.filterByName(e.target.value.toLowerCase())
     }
 
@@ -28,19 +28,44 @@ export class FilterBar extends React.Component {
         this.props.filterByGender(e.target.value.toLowerCase())
     }
 
-    handleSpecies= (e) => {
+    handleSpecies = (e) => {
         this.props.filterBySpecies(e.target.value)
     }
 
-    render() {
-        const {  species } = this.props
-        if (!species) return ""
+    decodeBirthyear = (people) => {
+    if (!people) return
+        const year = people.results.map(c => {
+            if (c.birth_year.search("BBY") > 0) {
 
-        let speciesNames=[]
+                c.birth_year = c.birth_year.slice(0, c.birth_year.search("BBY"))
+                c.birth_year = (0 - Number(c.birth_year))
+            }
+            else if (c.birth_year.search("ABY") > 0) {
+                c.birth_year = c.birth_year.slice(0, c.birth_year.search("ABY"))
+            }
+            else {
+                c.birth_year = null
+            }
+            return c.birth_year
+        })
+
+        console.log(year)
+        return year
+    }
+
+    render() {
+        const { species } = this.props
+        if (!species) return ""
+        if (!offline_people) return ""
+
+        let speciesNames = []
         speciesNames.push("All")
         for (let s in species) {
             speciesNames.push(species[s])
         }
+console.log(offline_people)
+        // Replace by this.props.people when API is online
+        const birthyears = this.decodeBirthyear(offline_people)
 
         return (
             <div >
@@ -63,13 +88,13 @@ export class FilterBar extends React.Component {
 
                         <div className="speciesFilter"><span>Species:</span>
                             <select name="genderSelect" onChange={this.handleSpecies}>
-                             {speciesNames.map( s => 
-                                 <option key={s} value={s}>{s}</option>
-                            )}
+                                {speciesNames.map(s =>
+                                    <option key={s} value={s}>{s}</option>
+                                )}
                             </select>
                         </div>
 
-                            <Slider people={offline_people}/>
+                        <Slider people={birthyears} />
 
                     </div>
                 </div>
