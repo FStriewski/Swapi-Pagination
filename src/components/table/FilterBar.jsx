@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import Slider from './Slider'
 import { filterByName, filterByGender, filterBySpecies } from '../../actions/filter'
 import '../../styles/css/topBarUnit.css'
 
@@ -44,9 +45,11 @@ export class FilterBar extends React.Component {
                 <div className="filterBarContainer" onClick={this.toggleVisibility}> <span id="filterButton">&#x21D5; Filter &#x21D5; </span></div>
                 <div id="wrapper">
                     <div id="filters">
+
                         <div className="textFilter"><span>Name:</span>
                             <input type="text" placeholder="search" onChange={this.handleName} />
                         </div>
+
                         <div className="genderFilter"><span>Gender:</span>
                             <select name="genderSelect" onChange={this.handleGender}>
                                 <option value="all">All</option>
@@ -55,6 +58,7 @@ export class FilterBar extends React.Component {
                                 <option value="n/a">n/a</option>
                             </select>
                         </div>
+
                         <div className="speciesFilter"><span>Species:</span>
                             <select name="genderSelect" onChange={this.handleSpecies}>
                              {speciesNames.map( s => 
@@ -62,6 +66,9 @@ export class FilterBar extends React.Component {
                             )}
                             </select>
                         </div>
+
+                            <Slider/>
+
                     </div>
                 </div>
             </div>
