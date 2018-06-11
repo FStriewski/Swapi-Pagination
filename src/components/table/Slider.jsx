@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 // import { filterByScore } from '../../actions/filter'
-// import { withStyles } from 'material-ui/styles';
-// import * as combine from "lodash/fp/compose"
 // import { fetchAllCompanys } from '../../actions/company'
 
 
@@ -20,28 +18,28 @@ class Slider extends React.Component {
         sliderValue: 0,
     }
 
-    decodeBirthyear = (years) => {
+    decodeBirthyear = (people) => {
 console.log(
-        years.map(c => 
-            c.birth_year.search("BBY") > 0 
-            ? c.birth_year = "-"+c.birth_year
-            : null 
-            //.split("")
-            //.replace(/^\D+/g, '') 
-            //.join("")
-        )
+   // people.results.map (c => c.birth_year.search("BBY")) ,
 
+    people.results.map(c => {
+        if (c.birth_year.search("BBY") > 0) {
+
+            c.birth_year = c.birth_year.slice(0, 2 )
+        }
+        c.birth_year
+        //.split("")
+        //.replace(/^\D+/g, '') 
+        //.join("")
+    })
 )
     }
-
 
     onSliderChange = (e) => {
 
         this.setState({ 
             sliderValue: e.target.value 
         });
-
-        
 
         // const initialValue = this.props.companys.past[1]
         // const selection = initialValue.filter(company => company.score >= e.target.value )
@@ -50,8 +48,8 @@ console.log(
     }
 
     render() {
-       const {classes} = this.props
-        const birthyears = this.decodeBirthyear(this.props.people.results)
+        const birthyear = this.decodeBirthyear(this.props.people)
+
         return (
             <div className="sliderContainer">
                 <div>
@@ -64,7 +62,6 @@ console.log(
 }
 
 const mapStateToProps = (state) => ({
-    people: state.people    
 })
 
 export default  connect(mapStateToProps, {  })(Slider)

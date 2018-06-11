@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import Slider from './Slider'
 import { filterByName, filterByGender, filterBySpecies } from '../../actions/filter'
 import '../../styles/css/topBarUnit.css'
+import {offline_people} from '../../offlineAPI'
+
 
 // Named export needed for testing
 export class FilterBar extends React.Component {
@@ -67,7 +69,7 @@ export class FilterBar extends React.Component {
                             </select>
                         </div>
 
-                            <Slider/>
+                            <Slider people={offline_people}/>
 
                     </div>
                 </div>
