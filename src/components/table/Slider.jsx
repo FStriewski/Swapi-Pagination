@@ -20,12 +20,28 @@ class Slider extends React.Component {
         sliderValue: 0,
     }
 
+    decodeBirthyear = (years) => {
+console.log(
+        years.map(c => 
+            c.birth_year.search("BBY") > 0 
+            ? c.birth_year = "-"+c.birth_year
+            : null 
+            //.split("")
+            //.replace(/^\D+/g, '') 
+            //.join("")
+        )
+
+)
+    }
+
 
     onSliderChange = (e) => {
 
         this.setState({ 
             sliderValue: e.target.value 
         });
+
+        
 
         // const initialValue = this.props.companys.past[1]
         // const selection = initialValue.filter(company => company.score >= e.target.value )
@@ -35,10 +51,11 @@ class Slider extends React.Component {
 
     render() {
        const {classes} = this.props
+        const birthyears = this.decodeBirthyear(this.props.people.results)
         return (
             <div className="sliderContainer">
                 <div>
-                    <label for="score">Score ({this.state.sliderValue} - 10) </label>
+                    <label htmlFor="score">Score ({this.state.sliderValue} - 10) </label>
                 </div>
                 <input id="score" className="Slider" type="range" value={this.state.sliderValue} min="0" max="10" onChange={this.onSliderChange} />
             </div>
@@ -47,7 +64,7 @@ class Slider extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    // companys: state.companys,    
+    people: state.people    
 })
 
 export default  connect(mapStateToProps, {  })(Slider)
