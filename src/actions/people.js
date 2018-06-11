@@ -12,10 +12,27 @@ export const FETCH_CHARACTER = "FETCH_CHARACTER"
 export const fetchAllPeople = () => (dispatch) => {
     request
         .get(`${baseUrl}/people/`)
-        .then(response => dispatch({
-            type: FETCH_ALL_PEOPLE,
-            payload: response.body
-        }))
+        .then(response => {
+
+            const people = {
+                ...response.body,
+                results: response.body.results.map( 
+                    x => (
+                        {
+                            ...x,
+                            birth_year: ""
+                        }
+                    )
+                )
+            }
+            
+            
+            dispatch({
+                type: FETCH_ALL_PEOPLE,
+                payload: people
+        })
+    
+         })
         .catch(error => console.error(error))
 }
 export const fetchCharacter = (url) => (dispatch) => {
