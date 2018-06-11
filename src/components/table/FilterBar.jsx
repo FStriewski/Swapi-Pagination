@@ -33,8 +33,10 @@ export class FilterBar extends React.Component {
     }
 
     decodeBirthyear = (people) => {
-    if (!people) return
+    if (!people) return ""
+
         const year = people.results.map(c => {
+            
             if (c.birth_year.search("BBY") > 0) {
 
                 c.birth_year = c.birth_year.slice(0, c.birth_year.search("BBY"))
@@ -47,9 +49,10 @@ export class FilterBar extends React.Component {
                 c.birth_year = null
             }
             return c.birth_year
-        })
+        }
+        )
 
-        console.log(year)
+        console.log(year.length )
         return year
     }
 
@@ -63,7 +66,6 @@ export class FilterBar extends React.Component {
         for (let s in species) {
             speciesNames.push(species[s])
         }
-console.log(offline_people)
         // Replace by this.props.people when API is online
         const birthyears = this.decodeBirthyear(offline_people)
 
