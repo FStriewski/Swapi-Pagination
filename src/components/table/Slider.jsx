@@ -4,14 +4,6 @@ import { connect } from 'react-redux'
 // import { fetchAllCompanys } from '../../actions/company'
 
 
-// const styles = theme => ({
-//     sliderContainer: {
-//         marginTop: 10,
-//         marginLeft: -50,
-//         width: "100%",
-//     },
-// });
-
 class Slider extends React.Component {
 
     state = {

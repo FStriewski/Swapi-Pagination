@@ -1,6 +1,5 @@
 @import "#variables";
 @import "#mixins";
-
 // Nesting table styles (flat structure)
 .tableContainer {
     font-size: 0.8em;
@@ -18,13 +17,11 @@
         height: 400px;
         overflow: auto;
         color: $swyellow;
-    
-    td {
-        border: solid 1px $swgold; // color: $swyellow;
-        padding: 1em;
+        td {
+            border: solid 1px $swgold; // color: $swyellow;
+            padding: 1em;
+        }
     }
-    }
-
     button {
         border: 1px solid $swyellow;
         background-color: Transparent;
@@ -34,7 +31,6 @@
         padding: .5rem 1rem;
         font-size: .7rem;
     }
-
     @include links
 }
 
@@ -43,7 +39,6 @@
     font-family: helvetica neue, Helvetica, Arial, sans-serif;
     background-color: $swwhite;
     color: $swblack;
-    
 }
 
 .filterBarContainer {
@@ -71,4 +66,10 @@
 
 #filterButton {
     padding: 0.5%;
+}
+
+.Slider {
+    margin-top: 10; 
+    margin-left: -50;
+    width: 100%;
 }
