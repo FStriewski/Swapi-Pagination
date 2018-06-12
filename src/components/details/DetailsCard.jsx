@@ -10,7 +10,6 @@ import '../../styles/css/detailsUnit.css'
          fetchCharacter: PropTypes.func.isRequired,
      }
 
-
      componentWillMount(props) {
            this.props.fetchCharacter(this.props.match.params.id)
     }

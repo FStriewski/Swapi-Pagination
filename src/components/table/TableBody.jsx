@@ -93,12 +93,10 @@ export class TableBody extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-
     people: state.people,
     species: state.species,
     planets: state.planets,
     filter: state.filter
-
 })
 
 export default connect(mapStateToProps, { fetchAllPeople, fetchMorePeople, fetchAllSpecies, fetchAllPlanets, fetchAllShips })(TableBody)

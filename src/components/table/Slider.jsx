@@ -11,9 +11,8 @@ export default class Slider extends React.Component {
 
         this.setState({
             sliderValue: e.target.value
-        });
+        })
     }
-
 
     render() {
 
