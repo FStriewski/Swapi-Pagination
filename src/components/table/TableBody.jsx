@@ -5,6 +5,7 @@ import { fetchAllPeople, fetchMorePeople } from '../../actions/people'
 import { fetchAllSpecies } from '../../actions/species'
 import { fetchAllPlanets } from '../../actions/planets'
 import { fetchAllShips } from '../../actions/starships'
+import InfiniteScroll from 'react-infinite-scroller';
 
 import { Link } from 'react-router-dom'
 import '../../styles/css/tableUnit.css'
@@ -54,6 +55,13 @@ export class TableBody extends React.Component {
                 )
             
         return (
+
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={() => this.loadMore(people.next)}
+                hasMore={true || false}
+                loader={<div className="loader" key={0}>Loading ...</div>}
+            >
             <div className="tableContainer">
                 <table >
                     <thead id="tableHeader">
@@ -73,7 +81,7 @@ export class TableBody extends React.Component {
                                 )
 
                                 return (
-                                    <tr key={i.name}>
+                                    <tr key={i.id}>
                                         <td ><Link to={`/people/${id}`}>{i.name}</Link></td>
                                         <td >{i.gender}</td>
                                         <td >{i.birth_year}</td>
@@ -86,8 +94,9 @@ export class TableBody extends React.Component {
                         }
                     </tbody>
                 </table>
-                <button onClick={() => this.loadMore(people.next)}> More...</button>
             </div>
+            </InfiniteScroll>
+
         )
     }
 }
